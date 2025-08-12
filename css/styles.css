@@ -1,0 +1,45 @@
+* {
+    font-family: Arial, sans-serif;
+}
+body {
+    background-color: #090212;
+    color: #ffffff;
+}
+
+.usageChart {
+    width: 250px;
+    height: 250px;
+    background-color: #110C1D;
+    border: 2px solid #1E1A2E;
+    border-radius: 8px;
+}
+
+.appList {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.appCard {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.appIcon {
+    width: 52px;
+    height: 52px;
+    clip-path: circle(50%);
+}
+
+.appInfo {
+    display: flex;
+    flex-direction: column;
+    margin-left: 12px;
+}
+
+.appName,
+.appTime {
+    margin: 0;
+    padding: 0;
+}
