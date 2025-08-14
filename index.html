@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DopaLocker Web</title>
     <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/script.js" defer></script>
 </head>
 <body>
     <header>
@@ -20,9 +22,9 @@
     <main>
         <section id="daily">
             <h2>Tempo de Uso Diário</h2>
-            <div class="usageChart">
-                <h4>sex., 27 de jun.</h4>
-                <p>Tempo total de uso: <strong>1h15</strong></p>
+            <div class="usageContainer">
+                <h4 class="right">sex., 27 de jun.</h4>
+                <canvas id="usageChartCanvas"></canvas>
             </div>
             <div class="appList">
                 <article class="appCard">
