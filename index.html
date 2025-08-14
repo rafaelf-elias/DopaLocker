@@ -12,19 +12,20 @@
     <header>
         <h1>DopaLocker Web</h1>
     </header>
-    <nav aria-label="Navegação Principal">
+    <nav class="navigation">
         <ul>
-            <li><a href="#daily">Tempo Diário</a></li>
-            <li><a href="#weekly">Tempo Semanal</a></li>
+            <li><a href="#daily">Uso Diário</a></li>
+            <li><a href="#weekly">Uso Semanal</a></li>
             <li><a href="#config">Configurações</a></li>
         </ul>
     </nav>
     <main>
+        <!-- == Section == -->
         <section id="daily">
             <h2>Tempo de Uso Diário</h2>
             <div class="usageContainer">
-                <h4 class="right">sex., 27 de jun.</h4>
-                <canvas id="usageChartCanvas"></canvas>
+                <h4>sex., 27 de jun.</h4>
+                <canvas id="dailyUsageChartCanvas"></canvas>
             </div>
             <div class="appList">
                 <article class="appCard">
@@ -67,6 +68,13 @@
         <section id="weekly">
             <h2>Tempo de Uso Semanal</h2>
             <p>Exibição do tempo de uso semanal dos aplicativos.</p>
+            <div class="usageContainer">
+                <div class="row">
+                    <h4>27h55min</h4>
+                    <h4>sex., 27 de jun.</h4>
+                </div>
+                <canvas id="weeklyUsageChartCanvas"></canvas>
+            </div>
         </section>
         <section id="config">
             <h2>Configurações</h2>
@@ -74,5 +82,4 @@
         </section>
     </main>
 </body>
-
 </html>

@@ -6,9 +6,19 @@ body {
     color: #ffffff;
 }
 
-#usageChartCanvas {
+/* todo Navigation's style */
+
+/* == Chart's style ==  */
+
+#dailyUsageChartCanvas {
     width: 350px !important;
     height: 350px !important;
+    margin-bottom: 20px;
+}
+
+#weeklyUsageChartCanvas {
+    width: 375px !important;
+    height: 150px !important;
     margin-bottom: 20px;
 }
 
@@ -19,19 +29,40 @@ body {
     background-color: #110C1D;
     border: 2px solid #1E1A2E;
     border-radius: 8px;
-    text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 16px;
+    padding: 8px;
     margin: 0 auto;
 }
 
+#daily .usageContainer h4 {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 30px;
+    margin: 0;
+    width: 100%;
+}
+
+#weekly .usageContainer {
+    height: 250px;
+}
+
+#weekly .row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 170px;
+}
+
+/* == App's list style ==  */
 .appList {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: center;
     margin-top: 20px;
+    gap: 40px;
 }
 
 .appCard {
@@ -56,8 +87,4 @@ body {
 .appTime {
     margin: 0;
     padding: 0;
-}
-
-.right {
-    align-self: flex-end;
 }
