@@ -1,24 +1,59 @@
 * {
     font-family: Arial, sans-serif;
 }
-body {
-    background-color: #090212;
-    color: #ffffff;
+
+:root {
+    --backgroundcolor: #090212;
+    --textcolor: #ffffff;
+    --containercolor: #110C1D;
+    --bordercolor: #1E1A2E
 }
 
-/* todo Navigation's style */
+body {
+    background-color: var(--backgroundcolor);
+    color: var(--textcolor);
+}
+
+/* == Navigation's style == */
+
+header {
+    display: flex;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    justify-content: space-between;
+}
+
+ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+}
+
+li a {
+    display: block;
+    color: var(--textcolor);
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #1E1A2E;
+}
 
 /* == Chart's style ==  */
 
 #dailyUsageChartCanvas {
-    width: 350px !important;
-    height: 350px !important;
-    margin-bottom: 20px;
+    width: 100%;
+    height: auto;
+    max-width: 350px;
+    
 }
 
 #weeklyUsageChartCanvas {
-    width: 375px !important;
-    height: 150px !important;
+    width: 100%;
+    height: auto;
+    max-width: 400px;
     margin-bottom: 20px;
 }
 
@@ -26,14 +61,14 @@ body {
     width: 100%;
     max-width: 400px;
     aspect-ratio: 1;
-    background-color: #110C1D;
-    border: 2px solid #1E1A2E;
+    background-color: var(--containercolor);
+    border: 2px solid var(--bordercolor);
     border-radius: 8px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 8px;
+    padding: 16px;
     margin: 0 auto;
 }
 
@@ -53,13 +88,15 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    gap: 170px;
+    gap: 180px;
 }
 
 /* == App's list style ==  */
+
 .appList {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
     margin-top: 20px;
     gap: 40px;
@@ -87,4 +124,51 @@ body {
 .appTime {
     margin: 0;
     padding: 0;
+}
+
+/* == Config Style == */
+
+#appSelect {
+    appearance: none;
+    width: 150px;
+    height: 30px;
+    color: var(--textcolor);
+    background-color: var(--backgroundcolor);
+    border-radius: 8px;
+    border: 2px solid var(--bordercolor);
+    font-size: 1em;
+    padding-left: 20px;
+}
+
+.appOptions {
+    display: flex;
+    flex-direction: column;
+}
+
+.inputContainer {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+input[type="radio"] {
+    appearance: none;
+    border-radius: 50%;
+    background-color: var(--containercolor);
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    position: relative;
+}
+
+input[type="radio"]:checked::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 12px;
+    height: 12px;
+    background-color: #6C63FF;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
 }
