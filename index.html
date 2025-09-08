@@ -5,66 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DopaLocker Web</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="js/script.js" defer></script>
 </head>
 <body>
-    <header>
+    <header class="header">
         <h1>DopaLocker Web</h1>
-        <nav class="navigation">
-            <ul>
-                <li><a href="#daily">Uso Diário</a></li>
-                <li><a href="#weekly">Uso Semanal</a></li>
-                <li><a href="#config">Configurações</a></li>
+        <nav class="nav">
+            <ul class="navList">
+                <li class="navItem"><a href="#daily">Uso Diário</a></li>
+                <li class="navItem"><a href="#weekly">Uso Semanal</a></li>
+                <li class="navItem"><a href="#config">Configurações</a></li>
             </ul>
         </nav>
     </header>
-    <main>
+    <main class="main">
         <!-- == Daily Section == -->
 
         <section id="daily">
             <h2>Tempo de Uso Diário</h2>
             <div class="usageContainer">
-                <h4>sex., 27 de jun.</h4>
-                <canvas id="dailyUsageChartCanvas"></canvas>
+                <div class="row">
+                    <button id="prevDay"><i class="fas fa-chevron-left"></i></button>
+                    <h4><span id="dayInfo"></span></h4>
+                    <button id="nextDay"><i class="fas fa-chevron-right"></i></button>
+                </div>
+                <div class="centred">
+                    <canvas id="dailyUsageChartCanvas"></canvas>
+                    <h4><span id="dayTime"></span></h4>
+                </div>
             </div>
-            <ul class="appList">
-                <li class="appCard">
-                    <img class="appIcon" src="img/tiktokicon.png">
-                    <div class="appInfo">
-                        <p class="appName">TikTok</p>
-                        <p class="appTime">1h05min</p>
-                    </div>
-                </li>
-                <li class="appCard">
-                    <img class="appIcon" src="img/instagramicon.png">
-                    <div class="appInfo">
-                        <p class="appName">Instagram</p>
-                        <p class="appTime">1h03min</p>
-                    </div>
-                </li>
-                <li class="appCard">
-                    <img class="appIcon" src="img/xicon.png">
-                    <div class="appInfo">
-                        <p class="appName">X</p>
-                        <p class="appTime">0h47min</p>
-                    </div>
-                </li>
-                <li class="appCard">
-                    <img class="appIcon" src="img/redditicon.png">
-                    <div class="appInfo">
-                        <p class="appName">Reddit</p>
-                        <p class="appTime">0h44min</p>
-                    </div>
-                </li>
-                <li class="appCard">
-                    <img class="appIcon" src="img/clashroyaleicon.png">
-                    <div class="appInfo">
-                        <p class="appName">Clash Royale</p>
-                        <p class="appTime">0h42min</p>
-                    </div>
-                </li>
-            </ul>
+            <ul class="appList"></ul>
         </section>
 
         <!-- == Weekly Section == -->
@@ -74,8 +45,8 @@
             <p>Exibição do tempo de uso semanal dos aplicativos.</p>
             <div class="usageContainer">
                 <div class="row">
-                    <h4>27h55min</h4>
-                    <h4>sex., 27 de jun.</h4>
+                    <h4><span id="weeklyTotal"></span></h4>
+                    <h4 class="right">sex., 27 de jun.</h4>
                 </div>
                 <canvas id="weeklyUsageChartCanvas"></canvas>
             </div>
@@ -100,17 +71,20 @@
                         <input type="time" id="time">
                     </div>
                     <div class="inputContainer">
-                        <input type="radio" name="action" id="block">
-                        <label  for="block">Bloquear aplicativo</label>
+                        <input class="inputRadio" type="radio" name="action" id="block">
+                        <label for="block">Bloquear aplicativo</label>
                     </div>
-                    <div class="inputContainer">
-                        <input type="radio" name="action" id="notify">
-                        <label for="notify">Notificar</label>
+                    <div>
+                        <div class="inputContainer">
+                            <input class="inputRadio" type="radio" name="action" id="notify">
+                            <label for="notify">Notificar</label>
+                        </div>
                         <input type="text" placeholder="Que tal investir esse tempo em algo que te faz crescer?">
                     </div>
                 </div>
             </div>
         </section>
     </main>
+    <script src="js/script.js"></script>
 </body>
 </html>

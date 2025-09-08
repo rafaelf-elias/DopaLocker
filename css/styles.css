@@ -1,68 +1,77 @@
 * {
     font-family: Arial, sans-serif;
+    box-sizing: border-box;
 }
 
 :root {
-    --backgroundcolor: #090212;
-    --textcolor: #ffffff;
-    --containercolor: #110C1D;
-    --bordercolor: #1E1A2E
+    --background: #090212;
+    --text: #FFFFFF;
+    --container: #110C1D;
+    --border: #1E1A2E;
+    --highlight: #7322DA;
+    --alert: #FF4C4C;
+    --hover: #2A1B3D;
+    --enabled: #4CAF50;
+    --disabled: #55516A;
 }
 
 body {
-    background-color: var(--backgroundcolor);
-    color: var(--textcolor);
+    background-color: var(--background);
+    color: var(--text);
+    padding: 0;
+    margin: 0;
 }
 
-/* == Navigation's style == */
+/* == Structure == */
 
-header {
+.header {
     display: flex;
     width: 100%;
     text-align: center;
     align-items: center;
-    justify-content: space-between;
-}
-
-ul {
-    list-style-type: none;
-    display: flex;
-    flex-direction: row;
-}
-
-li a {
-    display: block;
-    color: var(--textcolor);
     padding: 8px 16px;
+    justify-content: space-between;
+    background-color: var(--container);
+    border-bottom: 2px solid var(--border);
+}
+
+.main {
+    padding: 0 24px 0 24px;
+}
+
+/* todo footer */
+
+h4 {
+    margin: 0;
+    padding: 0;
+}
+
+/* == Navigation == */
+
+.navList {
+    list-style: none;
+    display: flex;
+    gap: 24px;
+    padding: 0;
+}
+
+.navItem a {
+    display: block;
+    color: var(--text);
+    padding: 8px;
     text-decoration: none;
 }
 
-li a:hover {
-    background-color: #1E1A2E;
+.navItem a:hover {
+    background-color: var(--hover);
 }
 
-/* == Chart's style ==  */
-
-#dailyUsageChartCanvas {
-    width: 100%;
-    height: auto;
-    max-width: 350px;
-    
-}
-
-#weeklyUsageChartCanvas {
-    width: 100%;
-    height: auto;
-    max-width: 400px;
-    margin-bottom: 20px;
-}
+/* == Containers == */
 
 .usageContainer {
     width: 100%;
-    max-width: 400px;
-    aspect-ratio: 1;
-    background-color: var(--containercolor);
-    border: 2px solid var(--bordercolor);
+    background-color: var(--container);
+    border: 2px solid var(--border);
     border-radius: 8px;
     display: flex;
     flex-direction: column;
@@ -72,28 +81,85 @@ li a:hover {
     margin: 0 auto;
 }
 
-#daily .usageContainer h4 {
-    display: flex;
-    justify-content: flex-end;
-    padding-right: 30px;
-    margin: 0;
-    width: 100%;
+#daily .usageContainer {
+    padding: 24px;
+    aspect-ratio: 1;
 }
 
+#daily .usageContainer,
 #weekly .usageContainer {
-    height: 250px;
+    max-width: 400px;
+}
+
+#daily .row {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    gap: 20px;
 }
 
 #weekly .row {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 180px;
+    align-items: center;
+    width: 100%;
 }
 
-/* == App's list style ==  */
+#weekly .row .right {
+    margin-left: auto;
+}
+
+/* todo configContainer */
+
+/* == Charts == */
+
+#dailyUsageChartCanvas {
+    margin-top: 12px;
+    max-width: 350px;
+    width: 100%;
+    aspect-ratio: 1;
+    display: block;
+}
+
+#weeklyUsageChartCanvas {
+    max-width: 375px;
+}
+
+.centred {
+    position: relative;
+    width: 100%;
+    max-width: 350px;
+    aspect-ratio: 1;
+}
+
+#dayTime {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* == Interactions == */
+
+#nextDay,
+#prevDay {
+    color: var(--text);
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+#nextDay:hover,
+#prevDay:hover {
+    background: var(--hover);
+    border-radius: 8px;
+}
+
+/* todo input, select, radio .inputContainer */
+
+/* == Lists & Cards == */
 
 .appList {
+    list-style: none;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -126,16 +192,16 @@ li a:hover {
     padding: 0;
 }
 
-/* == Config Style == */
+/* == Configurations & Forms == */
 
 #appSelect {
     appearance: none;
     width: 150px;
     height: 30px;
-    color: var(--textcolor);
-    background-color: var(--backgroundcolor);
+    color: var(--text);
+    background-color: var(--container);
     border-radius: 8px;
-    border: 2px solid var(--bordercolor);
+    border: 2px solid var(--border);
     font-size: 1em;
     padding-left: 20px;
 }
@@ -143,32 +209,27 @@ li a:hover {
 .appOptions {
     display: flex;
     flex-direction: column;
-}
-
-.inputContainer {
-    display: flex;
     align-items: center;
-    gap: 8px;
 }
 
-input[type="radio"] {
+.inputRadio {
     appearance: none;
     border-radius: 50%;
-    background-color: var(--containercolor);
+    background-color: var(--container);
     width: 25px;
     height: 25px;
     cursor: pointer;
     position: relative;
 }
 
-input[type="radio"]:checked::after {
+.inputRadio:checked::after {
     content: "";
     position: absolute;
     top: 50%;
     left: 50%;
     width: 12px;
     height: 12px;
-    background-color: #6C63FF;
+    background-color: var(--enabled);
     border-radius: 50%;
     transform: translate(-50%, -50%);
 }
