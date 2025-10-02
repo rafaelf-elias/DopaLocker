@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br">  
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,82 +9,19 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-    <header class="header">
-        <h1>DopaLocker Web</h1>
-        <nav class="nav">
-            <ul class="navList">
-                <li class="navItem"><a href="#daily">Uso Diário</a></li>
-                <li class="navItem"><a href="#weekly">Uso Semanal</a></li>
-                <li class="navItem"><a href="#config">Configurações</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main class="main">
-        <!-- == Daily Section == -->
-
-        <section id="daily">
-            <h2>Tempo de Uso Diário</h2>
-            <div class="usageContainer">
-                <div class="row">
-                    <button id="prevDay"><i class="fas fa-chevron-left"></i></button>
-                    <h4><span id="dayInfo"></span></h4>
-                    <button id="nextDay"><i class="fas fa-chevron-right"></i></button>
-                </div>
-                <div class="centred">
-                    <canvas id="dailyUsageChartCanvas"></canvas>
-                    <h4><span id="dayTime"></span></h4>
-                </div>
+    <div class="page">
+        <header id="header"></header>
+        <main class="main">
+            <h2>Acessar:</h2>
+            <div style="display: flex; flex-direction: column;">
+                <a href="/daily.html">Tempo diário</a>
+                <a href="/weekly.html">Tempo semanal</a>
+                <a href="/config.html">Configurações</a>
             </div>
-            <ul class="appList"></ul>
-        </section>
-
-        <!-- == Weekly Section == -->
-
-        <section id="weekly">
-            <h2>Tempo de Uso Semanal</h2>
-            <p>Exibição do tempo de uso semanal dos aplicativos.</p>
-            <div class="usageContainer">
-                <div class="row">
-                    <h4><span id="weeklyTotal"></span></h4>
-                    <h4 class="right">sex., 27 de jun.</h4>
-                </div>
-                <canvas id="weeklyUsageChartCanvas"></canvas>
-            </div>
-        </section>
-
-        <!-- == Config Section == -->
-
-        <section id="config">
-            <h2>Configurações</h2>
-            <p>Aqui você pode configurar os aplicativos e definir limites de uso.</p>
-            <div class="configContainer">
-                <select id="appSelect">
-                    <option value="tiktok">TikTok</option>
-                    <option value="instagram">Instagram</option>
-                    <option value="x">X</option>
-                    <option value="reddit">Reddit</option>
-                    <option value="clashroyale">Clash Royale</option>
-                </select>
-                <div class="appOptions">
-                    <div class="inputContainer">
-                        <label for="time">Definir limite diário:</label>
-                        <input type="time" id="time">
-                    </div>
-                    <div class="inputContainer">
-                        <input class="inputRadio" type="radio" name="action" id="block">
-                        <label for="block">Bloquear aplicativo</label>
-                    </div>
-                    <div>
-                        <div class="inputContainer">
-                            <input class="inputRadio" type="radio" name="action" id="notify">
-                            <label for="notify">Notificar</label>
-                        </div>
-                        <input type="text" placeholder="Que tal investir esse tempo em algo que te faz crescer?">
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-    <script src="js/script.js"></script>
+        </main>
+        <footer id="footer"></footer>
+    </div>
+    <script type="module" src="js/global.js"></script>
+    <script type="module" src="js/script.js"></script>
 </body>
 </html>

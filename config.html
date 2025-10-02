@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DopaLocker Web - Configurações</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="page">
+        <header id="header"></header>
+        <main class="main">
+            <section id="config">
+                <h2 class="title">Configurações</h2>
+                <p>Aqui você pode configurar os aplicativos e definir limites de uso.</p>
+                <div class="configContainer">
+                    <select id="appSelect"></select>
+                    <i class="fas fa-chevron-down downIcon"></i>
+                    <div class="appOptions">
+                        <div class="inputContainer">
+                            <label for="time">Definir limite diário:</label>
+                            <input type="time" id="time">
+                        </div>
+                        <div class="inputContainer">
+                            <input class="inputRadio" type="radio" name="action" id="block">
+                            <label for="block">Bloquear aplicativo</label>
+                        </div>
+                        <div>
+                            <div class="inputContainer">
+                                <input class="inputRadio" type="radio" name="action" id="notify">
+                                <label for="notify">Notificar</label>
+                            </div>
+                            <input type="text" placeholder="Que tal investir esse tempo em algo que te faz crescer?">
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer id="footer"></footer>
+    </div>
+    <script type="module" src="js/global.js"></script>
+    <script type="module" src="js/config.js"></script>
+    <script type="module" src="js/script.js"></script>
+</body>
+</html>

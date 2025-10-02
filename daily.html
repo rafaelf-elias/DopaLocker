@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DopaLocker Web - Diário</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="page">
+        <header id="header"></header>
+        <main class="main">
+            <section id="daily">
+                <h2 class="title">Tempo de Uso Diário</h2>
+                <div class="usageContainer">
+                    <div class="row">
+                        <button id="prevDay"><i class="fas fa-chevron-left"></i></button>
+                        <h4><span id="dayInfo"></span></h4>
+                        <button id="nextDay"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                    <div class="centred">
+                        <canvas id="dailyUsageChartCanvas"></canvas>
+                        <h4><span id="dayTime"></span></h4>
+                    </div>
+                </div>
+                <ul class="appList"></ul>
+            </section>
+        </main>
+        <footer id="footer"></footer>
+    </div>
+    <script type="module" src="js/charts.js"></script>
+    <script type="module" src="js/global.js"></script>
+    <script type="module" src="js/script.js"></script>
+</body>
+</html>
