@@ -4,15 +4,15 @@ const footer = document.querySelector('#footer');
 
 function renderHeader() {
     const html = `
-        <a href="/index.html"><h1>DopaLocker Web</h1></a>
+        <a href="./index.html"><h1>DopaLocker Web</h1></a>
         <nav class="nav">
             <div class="navMobile">
                 <i class="fas fa-bars icon"></i>
             </div>
             <ul class="navList">
-                <li class="navItem"><a href="/daily.html">Uso Diário</a></li>
-                <li class="navItem"><a href="/weekly.html">Uso Semanal</a></li>
-                <li class="navItem"><a href="/config.html">Configurações</a></li>
+                <li class="navItem"><a href="./daily.html">Uso Diário</a></li>
+                <li class="navItem"><a href="./weekly.html">Uso Semanal</a></li>
+                <li class="navItem"><a href="./config.html">Configurações</a></li>
             </ul>
         </nav>
     `;
